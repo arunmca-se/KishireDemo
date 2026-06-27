@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A complete example demonstrating all semantic HTML5 elements." />
+  <meta name="author" content="Sankar" />
+  <title>Semantic HTML5 — Complete Example</title>
+
+  <style>
+    /* Light styling just to make the semantic structure visible */
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      color: #1a1a1a;
+      background: #f7f7f9;
+    }
+    header.site-header, footer.site-footer {
+      background: #222;
+      color: #fff;
+      padding: 1rem 1.5rem;
+    }
+    nav ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin: .5rem 0 0; flex-wrap: wrap; }
+    nav a { color: #8ecbff; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .layout { display: flex; gap: 1.5rem; padding: 1.5rem; align-items: flex-start; flex-wrap: wrap; }
+    main { flex: 3; min-width: 320px; }
+    aside { flex: 1; min-width: 220px; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; }
+    article, section { background: #fff; border: 1px solid #e2e2e2; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; }
+    figure { margin: 1rem 0; }
+    figure img { max-width: 100%; border-radius: 6px; display: block; }
+    figcaption { font-size: .85rem; color: #666; margin-top: .25rem; }
+    code { background: #eee; padding: .1rem .35rem; border-radius: 4px; }
+    mark { background: #fff3a3; }
+    details { background: #fafafa; border: 1px solid #ddd; border-radius: 6px; padding: .5rem .75rem; margin: .75rem 0; }
+    summary { cursor: pointer; font-weight: 600; }
+    .label { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: #b00; font-weight: 700; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ccc; padding: .5rem; text-align: left; }
+    caption { caption-side: bottom; font-size: .8rem; color: #666; padding-top: .4rem; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== <header>: introductory content / site banner ===== -->
+  <header class="site-header">
+    <span class="label">&lt;header&gt;</span>
+    <h1>The Semantic Times</h1>
+    <p>Demonstrating every major semantic element in one page.</p>
+
+    <!-- ===== <nav>: a block of navigation links ===== -->
+    <nav aria-label="Primary navigation">
+      <span class="label">&lt;nav&gt;</span>
+      <ul>
+        <li><a href="#main-article">Article</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Page layout wrapper (non-semantic <div> used only for CSS) ===== -->
+  <div class="layout">
+
+    <!-- ===== <main>: the dominant content unique to this page ===== -->
+    <main>
+      <span class="label">&lt;main&gt;</span>
+
+      <!-- ===== <article>: self-contained, independently distributable content ===== -->
+      <article id="main-article">
+        <span class="label">&lt;article&gt;</span>
+
+        <!-- A header can also be scoped inside an article -->
+        <header>
+          <h2>Understanding Semantic HTML</h2>
+          <!-- ===== <time>: machine-readable date/time ===== -->
+          <p>Published on
+            <time datetime="2026-06-27">June 27, 2026</time>
+            by <address style="display:inline; font-style:normal;">Sankar</address>
+          </p>
+        </header>
+
+        <p>
+          Semantic HTML uses tags that describe their <strong>meaning</strong>,
+          not just their <em>appearance</em>. This improves
+          <mark>accessibility</mark>, SEO, and code readability.
+        </p>
+
+        <!-- ===== <section>: a thematic grouping with a heading ===== -->
+        <section id="features">
+          <span class="label">&lt;section&gt;</span>
+          <h3>Why It Matters</h3>
+          <p>Screen readers and search engines rely on structure. For example,
+            the abbreviation <abbr title="World Wide Web Consortium">W3C</abbr>
+            defines these standards.</p>
+
+          <!-- Inline semantic elements -->
+          <p>
+            You can highlight code like <code>&lt;article&gt;</code>,
+            quote inline with <q>semantics give meaning to markup</q>,
+            show edits with <del>old text</del> <ins>new text</ins>,
+            and note keyboard input such as <kbd>Ctrl</kbd> + <kbd>S</kbd>.
+            Program output: <samp>File saved.</samp>.
+            A variable: <var>x</var>. Subscript H<sub>2</sub>O and
+            superscript E = mc<sup>2</sup>.
+          </p>
+        </section>
+
+        <!-- ===== <blockquote>: extended quotation ===== -->
+        <blockquote cite="https://www.w3.org/">
+          <span class="label">&lt;blockquote&gt;</span>
+          <p>“The power of the Web is in its universality. Access by everyone
+            regardless of disability is an essential aspect.”</p>
+          <footer>— Tim Berners-Lee, <cite>W3C</cite></footer>
+        </blockquote>
+
+        <!-- ===== <figure> + <figcaption>: media with a caption ===== -->
+        <section id="media">
+          <span class="label">&lt;figure&gt; / &lt;figcaption&gt;</span>
+          <h3>Media with Caption</h3>
+          <figure>
+            <img
+              src="https://placehold.co/600x300?text=Semantic+HTML"
+              alt="Illustration representing semantic HTML structure" />
+            <figcaption>Fig. 1 — A figure with an associated caption.</figcaption>
+          </figure>
+        </section>
+
+        <!-- ===== <details> + <summary>: disclosure widget ===== -->
+        <span class="label">&lt;details&gt; / &lt;summary&gt;</span>
+        <details>
+          <summary>What is the difference between &lt;section&gt; and &lt;div&gt;?</summary>
+          <p>A <code>&lt;section&gt;</code> groups related content and usually has a
+            heading. A <code>&lt;div&gt;</code> carries no meaning and is used only
+            for styling or scripting hooks.</p>
+        </details>
+
+        <!-- ===== <table>: tabular data ===== -->
+        <section id="data">
+          <span class="label">&lt;table&gt;</span>
+          <h3>Common Semantic Elements</h3>
+          <table>
+            <caption>Table 1 — A few semantic tags and their roles.</caption>
+            <thead>
+              <tr><th scope="col">Element</th><th scope="col">Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>&lt;header&gt;</code></td><td>Introductory content</td></tr>
+              <tr><td><code>&lt;nav&gt;</code></td><td>Navigation links</td></tr>
+              <tr><td><code>&lt;article&gt;</code></td><td>Self-contained content</td></tr>
+              <tr><td><code>&lt;footer&gt;</code></td><td>Closing content</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="2">Source: MDN Web Docs</td></tr>
+            </tfoot>
+          </table>
+        </section>
+
+        <!-- ===== <progress> & <meter>: measurement elements ===== -->
+        <span class="label">&lt;progress&gt; / &lt;meter&gt;</span>
+        <p>Reading progress: <progress value="70" max="100">70%</progress></p>
+        <p>Disk usage: <meter value="0.6" min="0" max="1">60%</meter></p>
+
+        <!-- An article can also have its own footer -->
+        <footer>
+          <p><small>Tags: <a href="#">html</a>, <a href="#">semantics</a>,
+            <a href="#">accessibility</a></small></p>
+        </footer>
+      </article>
+    </main>
+
+    <!-- ===== <aside>: tangentially related content (sidebar) ===== -->
+    <aside aria-label="Sidebar">
+      <span class="label">&lt;aside&gt;</span>
+      <h2>Related</h2>
+      <nav aria-label="Related links">
+        <ul>
+          <li><a href="#">HTML5 Spec</a></li>
+          <li><a href="#">ARIA Roles</a></li>
+          <li><a href="#">SEO Basics</a></li>
+        </ul>
+      </nav>
+
+      <!-- ===== <form> with semantic form controls ===== -->
+      <section id="contact">
+        <span class="label">&lt;form&gt; / &lt;fieldset&gt;</span>
+        <h3>Subscribe</h3>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Newsletter</legend>
+            <p>
+              <label for="email">Email:</label><br />
+              <input type="email" id="email" name="email"
+                     placeholder="you@example.com" required />
+            </p>
+            <p>
+              <label for="topic">Topic:</label><br />
+              <select id="topic" name="topic">
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JavaScript</option>
+              </select>
+            </p>
+            <button type="submit">Sign up</button>
+          </fieldset>
+        </form>
+      </section>
+    </aside>
+
+  </div>
+
+  <!-- ===== <footer>: closing content for the whole page ===== -->
+  <footer class="site-footer">
+    <span class="label">&lt;footer&gt;</span>
+    <p>&copy; <time datetime="2026">2026</time> The Semantic Times.
+      Built as a learning example of semantic HTML5.</p>
+    <address>
+      Contact: <a href="mailto:appzcodesankar@gmail.com" style="color:#8ecbff;">appzcodesankar@gmail.com</a>
+    </address>
+  </footer>
+
+</body>
+</html>
